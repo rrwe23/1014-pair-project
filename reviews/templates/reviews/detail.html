@@ -7,5 +7,7 @@
   <p>리뷰내용:{{ review.content }}</p>
   <p>영화 제목:{{ review.movie_name }}</p>
   <p>평점:{{ review.grade }}</p>
+  <a href="{% url 'reviews:update' review.pk %}" class="btn btn-primary">수정</a>
+  <a href="{% url 'reviews:update' review.pk %}" class="btn btn-primary">삭제</a>
 
 {% endblock %}
