@@ -2,7 +2,8 @@
 {% load django_bootstrap5 %}
 
 {% block body %}
-<form action="" method="POST">
+<h1>회원가입</h1>
+<form action="" method="POST" class-"m-4">
   {% csrf_token %}
   {% bootstrap_form form %}
   {% bootstrap_button button_type="submit" content="회원가입"%}
