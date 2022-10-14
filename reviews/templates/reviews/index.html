@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block body %}
+  <div class="m-4">
+    <h1>리뷰 목록</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">pk</th>
+          <th scope="col">리뷰 제목</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for review in reviews %}
+          <tr>
+            <td>{{ review.id }}</td>
+            <td>
+              <a href="" class="text-decoration-none">{{ review.title }}</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
