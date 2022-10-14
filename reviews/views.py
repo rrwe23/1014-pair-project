@@ -1,4 +1,5 @@
 
+from multiprocessing import context
 from django.shortcuts import render,redirect
 from .forms import ReviewForm
 from .models import Review
@@ -18,3 +19,10 @@ def create(request):
         'review_form' : review_form
     }
     return render(request,'reviews/create.html',context = context)
+
+def index(request):
+    reviews =  Review.objects.all()
+    context={
+        'reviews':reviews
+    }
+    return render(request, 'reviews/index.html',context)
