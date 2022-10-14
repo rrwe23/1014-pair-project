@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def signup(request):
@@ -10,7 +12,7 @@ def signup(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("accounts:signup")
+            return redirect("accounts:index")
     else:
         form = CustomUserCreationForm()
     context = {
@@ -24,7 +26,7 @@ def login(request):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             auth_login(request, form.get_user())
-            return redirect("accounts:login")
+            return redirect("accounts:index")
     else:
         form = AuthenticationForm()
     context = {
@@ -45,3 +47,16 @@ def detail(request, pk):
     user = get_user_model().objects.get(pk=pk)
     context = {"user": user}
     return render(request, "accounts/detail.html", context)
+
+
+@login_required
+def update(request, pk):
+    if request.method == "POST":
+        form = CustomUserChangeForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect("accounts:detail", request.user.pk)
+    else:
+        form = CustomUserChangeForm(instance=request.user)
+    context = {"form": form}
+    return render(request, "accounts/update.html", context)
