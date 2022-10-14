@@ -15,7 +15,7 @@
       {% for user in users %}
       <tr>
         <td>{{ user.id }}</td>
-        <td><a href="">{{ user.username }}</a></td>
+        <td><a href="{% url 'accounts:detail' user.id %}" class="text-decoration-none">{{ user.username }}</a></td>
       </tr>
       {% endfor %}
     </tbody>
