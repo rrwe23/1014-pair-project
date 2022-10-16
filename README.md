@@ -26,15 +26,15 @@ git checkout -b [브랜치명]
 
 4. 깃허브 PR을 생성하고 브랜치를  병합해준다.
 
-![](C:\Users\이주현\AppData\Roaming\marktext\images\2022-10-16-23-16-27-image.png)
+![1](https://user-images.githubusercontent.com/70432152/196041538-bc22d448-402e-48e9-ab2a-f995e681d016.png)
 
-![](C:\Users\이주현\AppData\Roaming\marktext\images\2022-10-16-23-16-40-image.png)
+![2](https://user-images.githubusercontent.com/70432152/196041585-8683d3ea-bf55-47b1-bf60-ad5763d02c95.png)
 
-![](C:\Users\이주현\AppData\Roaming\marktext\images\2022-10-16-23-16-51-image.png)
+![3](https://user-images.githubusercontent.com/70432152/196041595-b667348a-6a46-4e37-ae8b-ff98aa070f18.png)
 
 5. 이전 브랜치는 삭제 해 준다.
 
-![](C:\Users\이주현\AppData\Roaming\marktext\images\2022-10-16-23-17-16-image.png)
+![4](https://user-images.githubusercontent.com/70432152/196041613-c5169d25-903a-45e5-9874-0b267b419f86.png)
 
 6. 메인 브랜치로 전환 후 Pull 을 해준다.
 
